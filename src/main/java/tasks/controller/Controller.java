@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 import tasks.model.Task;
 import tasks.services.DateService;
-import tasks.services.TaskIO;
+import tasks.utils.TaskFileReaderWriter;
 import tasks.services.TasksService;
 import tasks.view.Main;
 
@@ -108,7 +108,7 @@ public class Controller {
     public void deleteTask(){
         Task toDelete = (Task)tasks.getSelectionModel().getSelectedItem();
         tasksList.remove(toDelete);
-        TaskIO.rewriteFile(tasksList);
+        TaskFileReaderWriter.rewriteFile(tasksList);
     }
     @FXML
     public void showDetailedInfo(){
