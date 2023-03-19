@@ -23,18 +23,18 @@ import java.time.LocalDate;
 import java.util.Date;
 
 
-public class NewEditController {
+public class AddEditTaskController {
 
     private static Button clickedButton;
 
-    private static final Logger log = Logger.getLogger(NewEditController.class.getName());
+    private static final Logger log = Logger.getLogger(AddEditTaskController.class.getName());
 
     public static void setClickedButton(Button clickedButton) {
-        NewEditController.clickedButton = clickedButton;
+        AddEditTaskController.clickedButton = clickedButton;
     }
 
     public static void setCurrentStage(Stage currentStage) {
-        NewEditController.currentStage = currentStage;
+        AddEditTaskController.currentStage = currentStage;
     }
 
     private static Stage currentStage;
