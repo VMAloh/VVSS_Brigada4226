@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 import tasks.controller.Controller;
 import tasks.controller.Notificator;
-import tasks.model.ArrayTaskList;
-import tasks.services.TaskIO;
+import tasks.repository.ArrayTaskList;
+import tasks.utils.TaskFileReaderWriter;
 import tasks.services.TasksService;
 
 import java.io.File;
@@ -35,7 +35,7 @@ public class Main extends Application {
 
         log.info("saved data reading");
         if (savedTasksFile.length() != 0) {
-            TaskIO.readBinary(savedTasksList, savedTasksFile);
+            TaskFileReaderWriter.readBinary(savedTasksList, savedTasksFile);
         }
         try {
             log.info("application start");
