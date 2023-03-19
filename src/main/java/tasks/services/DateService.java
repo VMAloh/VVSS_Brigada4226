@@ -17,7 +17,7 @@ public class DateService {
     public DateService(TasksService service){
         this.service=service;
     }
-    public static LocalDate getLocalDateValueFromDate(Date date){//for setting to DatePicker - requires LocalDate
+    public LocalDate getLocalDateValueFromDate(Date date){//for setting to DatePicker - requires LocalDate
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
     }
@@ -25,6 +25,7 @@ public class DateService {
         Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
         return Date.from(instant);
     }
+    //noTimeDate is a date object that stores only information about date (not about time)
     public Date getDateMergedWithTime(String time, Date noTimeDate) {//to retrieve Date object from both DatePicker and time field
         String[] units = time.split(":");
         int hour = Integer.parseInt(units[0]);

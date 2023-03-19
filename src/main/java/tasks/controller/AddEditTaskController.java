@@ -126,7 +126,7 @@ public class AddEditTaskController {
         if (source.isSelected()){
             hideRepeatedTaskModule(false);
         }
-        else if (!source.isSelected()){
+        else{
             hideRepeatedTaskModule(true);
         }
     }
