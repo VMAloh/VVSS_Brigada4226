@@ -18,10 +18,10 @@ class LinkedTaskListTest {
     @BeforeAll
     void setUp() {
         linkedTaskList = new LinkedTaskList();
-        linkedTaskList.add(new Task("t1", new Date()));
-        linkedTaskList.add(new Task("t1", new Date()));
-        linkedTaskList.add(new Task("t1", new Date()));
-        linkedTaskList.add(new Task("t1", new Date()));
+        linkedTaskList.add(new Task("task1", new Date()));
+        linkedTaskList.add(new Task("task2", new Date()));
+        linkedTaskList.add(new Task("task3", new Date()));
+        linkedTaskList.add(new Task("task4", new Date()));
         n=4;
     }
 
@@ -29,12 +29,7 @@ class LinkedTaskListTest {
     @ValueSource(ints = {-1, -2, 4, 5})
     @DisplayName("NegativeTest")
      void BVANegativeTest(int position) {
-        try{
-            Task task = linkedTaskList.getTask(position);
-            assert(false);
-        }catch(Exception e) {
-
-        }
+        assertThrows(IndexOutOfBoundsException.class, ()->linkedTaskList.getTask(position));
     }
 
     @ParameterizedTest
@@ -42,7 +37,9 @@ class LinkedTaskListTest {
     void BVAPositiveTest(int position) {
         try{
             Task task = linkedTaskList.getTask(position);
-            System.out.println("Task retrieved");
+            assertNotNull(task);
+            String titl = "task"+(position+1);
+            assertEquals(titl, task.getTitle());
         }catch(Exception e) {
             assert(false);
         }
