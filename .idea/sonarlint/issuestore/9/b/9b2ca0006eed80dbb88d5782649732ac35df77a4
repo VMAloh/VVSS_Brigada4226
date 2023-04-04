@@ -1,8 +1,0 @@
-
-`
-java:S1301P"KReplace this "switch" statement by "if" statements to increase readability.(¯ßð
-6	java:S131P""Add a default case to this switch.(¯ßð
-Q	java:S125["<This block of commented-out lines of code should be removed.(Ô€‚’
-]
-java:S1126~"BReplace this if-then-else statement by a single method invocation.(¬ì‡åþÿÿÿÿ
-T	java:S106Ï"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ
