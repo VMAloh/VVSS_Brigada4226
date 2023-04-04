@@ -1,8 +1,6 @@
 package tasks.repository;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import tasks.model.Task;
 
 import java.util.Date;
@@ -55,5 +53,9 @@ class LinkedTaskListTestEcp {
     @Test
     void getTask_IndexGreaterThanOrEqualToSize() {
         assertThrows(IndexOutOfBoundsException.class, () -> singleTaskList.getTask(singleTaskList.size()));
+    }
+
+    @AfterEach
+    void tearDown() {
     }
 }
