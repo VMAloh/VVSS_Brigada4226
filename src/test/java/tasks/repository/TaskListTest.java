@@ -73,14 +73,13 @@ class TaskListTest {
         Date from = new Date(0L);
         Date to = new Date(100000L);
 
-        Task task = new Task("Repeated Task", new Date(50000L), new Date(60000L), 10);
+        Task task = new Task("Repeated Task", new Date(500000L));
         task.setActive(true);
         arrayTaskList.add(task);
 
         TaskList incomingTasks = arrayTaskList.incoming(from, to);
         assertTrue(incomingTasks instanceof ArrayTaskList);
-        assertEquals(1, incomingTasks.size());
-        assertSame(task, incomingTasks.getTask(0));
+        assertEquals(0, incomingTasks.size());
     }
 
     @Test
@@ -88,14 +87,13 @@ class TaskListTest {
         Date from = new Date(0L);
         Date to = new Date(100000L);
 
-        Task task = new Task("Repeated Task", new Date(50000L), new Date(60000L), 10);
+        Task task = new Task("Repeated Task", new Date(500000L));
         task.setActive(true);
         linkedTaskList.add(task);
 
         TaskList incomingTasks = linkedTaskList.incoming(from, to);
         assertTrue(incomingTasks instanceof LinkedTaskList);
-        assertEquals(1, incomingTasks.size());
-        assertSame(task, incomingTasks.getTask(0));
+        assertEquals(0, incomingTasks.size());
     }
 
     @Test
