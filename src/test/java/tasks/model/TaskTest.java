@@ -31,6 +31,22 @@ class TaskTest {
 
     }
 
+    //Lab4 tests
+
+    @Test
+    public void testSetTitle() {
+        task.setTitle("Test set title");
+        assertEquals("Test set title", task.getTitle());
+    }
+
+    @Test
+    public void testSetActive() {
+        task.setActive(true);
+        assertEquals(true, task.isActive());
+        task.setActive(false);
+        assertEquals(false, task.isActive());
+    }
+
     @AfterEach
     void tearDown() {
     }
