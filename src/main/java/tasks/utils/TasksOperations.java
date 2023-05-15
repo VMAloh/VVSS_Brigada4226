@@ -18,10 +18,14 @@ public class TasksOperations {
         System.out.println(end);
         ArrayList<Task> incomingTasks = new ArrayList<>();
         for (Task t : tasks) {
+            Date startTime = t.getStartTime();
             Date nextTime = t.nextTimeAfter(start);
             if (nextTime != null && (nextTime.before(end) || nextTime.equals(end))) {
                 incomingTasks.add(t);
                 System.out.println(t.getTitle());
+            }
+            if (startTime.compareTo(start)>=0 && startTime.compareTo(end)<=0) {
+                incomingTasks.add(t);
             }
         }
         return incomingTasks;
